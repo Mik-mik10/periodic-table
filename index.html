@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101311">
+  <title>Elements — Periodic Table Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Elements home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>ELEMENTS<span class="brand-period">.</span></span>
+      </a>
+      <div class="topbar-note"><span class="live-dot"></span> AN INTERACTIVE ATLAS OF MATTER</div>
+      <a class="about-link" href="#about">ABOUT <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div class="eyebrow"><span>THE BUILDING BLOCKS</span><span class="eyebrow-rule"></span><span>EST. 1869</span></div>
+        <h1>Everything is<br><span>an element.</span></h1>
+        <p class="intro-copy">118 known elements. One universe of possibility.<br>Explore the periodic table from a different perspective.</p>
+        <div class="stats" aria-label="Periodic table facts">
+          <div class="stat"><strong>118</strong><span>ELEMENTS</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>07</strong><span>PERIODS</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><strong>18</strong><span>GROUPS</span></div>
+        </div>
+      </section>
+
+      <section class="explorer" aria-label="Interactive periodic table">
+        <div class="explorer-heading">
+          <div>
+            <div class="section-kicker">CHOOSE YOUR PERSPECTIVE</div>
+            <h2>Explore the elements</h2>
+          </div>
+          <div class="view-switcher" role="group" aria-label="Choose visualization">
+            <button class="view-button active" type="button" data-view="table" aria-pressed="true"><span class="view-icon table-icon" aria-hidden="true"></span>TABLE</button>
+            <button class="view-button" type="button" data-view="sphere" aria-pressed="false"><span class="view-icon sphere-icon" aria-hidden="true"></span>SPHERE</button>
+            <button class="view-button" type="button" data-view="helix" aria-pressed="false"><span class="view-icon helix-icon" aria-hidden="true"></span>HELIX</button>
+            <button class="view-button" type="button" data-view="grid" aria-pressed="false"><span class="view-icon grid-icon" aria-hidden="true"></span>GRID</button>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="element-search" type="search" placeholder="Search elements..." autocomplete="off" aria-label="Search elements by name, symbol, or atomic number">
+            <kbd>⌘ K</kbd>
+          </label>
+          <div class="category-legend" aria-label="Filter by element category">
+            <button class="legend-item active" type="button" data-category="all"><i class="legend-dot all-dot"></i>ALL</button>
+            <button class="legend-item" type="button" data-category="alkali"><i class="legend-dot alkali-dot"></i>ALKALI</button>
+            <button class="legend-item" type="button" data-category="transition"><i class="legend-dot transition-dot"></i>TRANSITION</button>
+            <button class="legend-item" type="button" data-category="post-transition"><i class="legend-dot post-dot"></i>POST-TRANSITION</button>
+            <button class="legend-item" type="button" data-category="metalloid"><i class="legend-dot metalloid-dot"></i>METALLOID</button>
+            <button class="legend-item" type="button" data-category="nonmetal"><i class="legend-dot nonmetal-dot"></i>NONMETAL</button>
+            <button class="legend-item" type="button" data-category="noble-gas"><i class="legend-dot noble-dot"></i>NOBLE GAS</button>
+            <button class="legend-item" type="button" data-category="lanthanide"><i class="legend-dot lanth-dot"></i>LANTHANIDE</button>
+            <button class="legend-item" type="button" data-category="actinide"><i class="legend-dot actinide-dot"></i>ACTINIDE</button>
+          </div>
+        </div>
+
+        <div class="view-caption">
+          <span id="view-title">THE CLASSIC ARRANGEMENT</span>
+          <span id="result-count">118 ELEMENTS</span>
+        </div>
+        <div class="visualization" id="visualization" data-view="table">
+          <div id="element-layout" class="element-layout" aria-label="118 chemical elements"></div>
+          <div class="empty-state" id="empty-state" hidden>No elements match your search.</div>
+        </div>
+        <div class="detail-panel" id="detail-panel" aria-live="polite">
+          <div class="detail-placeholder"><span class="detail-arrow">↖</span> SELECT AN ELEMENT TO DISCOVER MORE</div>
+          <div class="detail-content" id="detail-content" hidden></div>
+        </div>
+        <p class="explorer-hint"><span class="hint-dot"></span> Select any element to reveal its properties</p>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-label">A LITTLE CONTEXT</div>
+        <p>The periodic table organizes elements by their atomic number and recurring chemical properties. First published by Dmitri Mendeleev in 1869, it remains one of science’s most useful maps.</p>
+        <span class="about-credit">A SMALL WINDOW INTO A VERY BIG UNIVERSE.</span>
+      </section>
+    </main>
+    <footer><span>ELEMENTS<span class="brand-period">.</span></span><span>MADE OF THE SAME STUFF AS THE STARS.</span><span>118 / ∞</span></footer>
+  </div>
+</body>
+</html>
